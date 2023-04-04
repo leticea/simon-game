@@ -45,4 +45,17 @@ const showPath = async (colors) => {
     currentColor.style.backgroundColor = colorObject[color].current;
     await delay(600);
   }
+
+  // [set flag to indicate the game is no longer generating path]
+  isPathGenerating = false;
+};
+
+// [function to end the game and show final score]
+const endGame = () => {
+  resultElement.innerHTML = `<span> Your Score : </span> ${score}`;
+  resultElement.classList.remove("hide");
+  containerElement.classList.remove("hide");
+  wrapperElement.classList.add("hide");
+  startBtn.innerText = "Play Again";
+  startBtn.classList.remove("hide");
 };
