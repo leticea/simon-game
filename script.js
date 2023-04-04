@@ -7,10 +7,10 @@ const wrapperElement = document.querySelector(".wrapper");
 
 // [current and new colors object]
 const colorObject = {
-  color1: { current: "006400", new: "00ff00" },
-  color2: { current: "800000", new: "ff0000" },
-  color3: { current: "00008b", new: "0000ff" },
-  color4: { current: "808000", new: "ffff00" },
+  color1: { current: "#006400", new: "#00ff00" },
+  color2: { current: "#800000", new: "#ff0000" },
+  color3: { current: "#00008b", new: "#0000ff" },
+  color4: { current: "#808000", new: "#ffff00" },
 };
 
 // [game variables]
@@ -104,4 +104,6 @@ const handleColorClick = async (e) => {
 
 // [event listeners]
 startBtn.addEventListener("click", resetGame);
-colorParts.forEach((color) => color.addEventListener("click", handleColorClick));
+colorParts.forEach((color) =>
+  color.addEventListener("click", handleColorClick)
+);
