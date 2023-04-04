@@ -29,3 +29,20 @@ const getRandomColor = (colorsObject) => {
 const delay = async (time) => {
   return await new Promise((resolve) => setTimeout(resolve, time));
 };
+
+// [function to generate a random path of colors]
+const showPath = async (colors) => {
+  scoreElement.innerText = score;
+  // [loop through each color in the array]
+  for (let color of colors) {
+    const currentColor = document.querySelector(`.${color}`);
+    // [pause execution for 500 milliseconds]
+    await delay(500);
+    // [set background to new color]
+    currentColor.style.backgroundColor = colorObject[color].new;
+    await delay(600);
+    // [set background to old color]
+    currentColor.style.backgroundColor = colorObject[color].current;
+    await delay(600);
+  }
+};
