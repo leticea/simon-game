@@ -20,3 +20,7 @@ let score = 0;
 let clickCount = 0;
 
 // [function to get a random color from colors object]
+const getRandomColor = (colorsObject) => {
+  const colorKeys = Object.keys(colorsObject);
+  return colorKeys[Math.floor(Math.random() * colorKeys.length)];
+};
