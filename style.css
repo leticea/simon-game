@@ -33,3 +33,38 @@ body {
   top: 50%;
   left: 50%;
 }
+
+.colors {
+  height: 21rem;
+  width: 21rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.color1 {
+  background-color: #006400;
+  border-radius: 10px 0 0 0;
+  top: 3rem;
+  left: 3rem;
+}
+
+.color2 {
+  background-color: #800000;
+  border-radius: 0 10px 0 0;
+  top: 3rem;
+  right: 3rem;
+}
+
+.color3 {
+  background-color: #00008b;
+  border-radius: 0 0 10px 0;
+  bottom: 3rem;
+  right: 3rem;
+}
+
+.color4 {
+  background-color: #808000;
+  border-radius: 0 0 0 10px;
+  bottom: 3rem;
+  left: 3rem;
+}
