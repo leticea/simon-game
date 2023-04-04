@@ -38,6 +38,7 @@ const generateRandomPath = async () => {
   await showPath(randomColors);
 };
 
+// [function to show the path of colors to player]
 const showPath = async (colors) => {
   scoreElement.innerText = score;
   // [loop through each color in the array]
@@ -75,4 +76,21 @@ const resetGame = () => {
   wrapperElement.classList.remove("hide");
   containerElement.classList.add("hide");
   generateRandomPath();
+};
+
+// [function to handle a color being clicked]
+const handleColorClick = async (e) => {
+  // [if the path is currently being generated, ignore click]
+  if (isPathGenerating) {
+    return false;
+  }
+
+  // [if clicked color is correct, update score and continue generating the path]
+  if (e.target.classList.contains(randomColors[clickCount])) {
+    e.target.style.backgroundColor = colorObject[randomColors[clickCount]].new;
+    await delay(500);
+    e.target.style.backgroundColor =
+      colorObject[randomColors[clickCount]].current;
+    clickCount++;
+  }
 };
