@@ -92,5 +92,16 @@ const handleColorClick = async (e) => {
     e.target.style.backgroundColor =
       colorObject[randomColors[clickCount]].current;
     clickCount++;
+
+    if (clickCount === score) {
+      clickCount = 0;
+      generateRandomPath();
+    }
+  } else {
+    endGame();
   }
 };
+
+// [event listeners]
+startBtn.addEventListener("click", resetGame);
+colorParts.forEach((color) => color.addEventListener("click", handleColorClick));
