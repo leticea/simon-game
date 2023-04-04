@@ -24,3 +24,8 @@ const getRandomColor = (colorsObject) => {
   const colorKeys = Object.keys(colorsObject);
   return colorKeys[Math.floor(Math.random() * colorKeys.length)];
 };
+
+// [function to pause execution of game for given amount of time]
+const delay = async (time) => {
+  return await new Promise((resolve) => setTimeout(resolve, time));
+};
