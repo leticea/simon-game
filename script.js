@@ -31,6 +31,13 @@ const delay = async (time) => {
 };
 
 // [function to generate a random path of colors]
+const generateRandomPath = async () => {
+  randomColors.push(getRandomColor(colorObject));
+  score = randomColors.length;
+  isPathGenerating = true;
+  await showPath(randomColors);
+};
+
 const showPath = async (colors) => {
   scoreElement.innerText = score;
   // [loop through each color in the array]
@@ -58,4 +65,14 @@ const endGame = () => {
   wrapperElement.classList.add("hide");
   startBtn.innerText = "Play Again";
   startBtn.classList.remove("hide");
+};
+
+const resetGame = () => {
+  score = 0;
+  clickCount = 0;
+  randomColors = [];
+  isPathGenerating = false;
+  wrapperElement.classList.remove("hide");
+  containerElement.classList.add("hide");
+  generateRandomPath();
 };
